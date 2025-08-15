@@ -362,7 +362,7 @@ const WiseSportsAIDashboard: React.FC = () => {
       </header>
 
       {/* Page Layout: Left Sidebar, Main Content, Right Sidebar */}
-      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] xl:grid-cols-[260px_1fr_300px]  min-h-[calc(100vh-60px)] max-w-screen-2xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] xl:grid-cols-[260px_1fr_300px] h-[calc(100vh-60px)] max-w-screen-2xl mx-auto">
         {/* Left Sidebar */}
         <aside className="hidden lg:block bg-[#1a1f2e] border-r border-[#2a3441] overflow-y-auto p-5">
           <div className="space-y-6">
@@ -434,7 +434,7 @@ const WiseSportsAIDashboard: React.FC = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="bg-[#0a0e1a] overflow-y-auto p-5">
+        <main className="bg-[#0a0e1a] overflow-y-scroll scrollbar scrollbar-thumb-gray-500 scrollbar-track-gray-800 scrollbar-w-3 scrollbar-track-rounded-full scrollbar-thumb-rounded-full p-5">
           {/* Dashboard Header */}
           <Card className="bg-white/5 backdrop-blur-[10px] border-white/10 mb-5">
             <CardContent className="p-5">
@@ -628,7 +628,7 @@ const WiseSportsAIDashboard: React.FC = () => {
         </main>
 
         {/* Right Sidebar */}
-        <aside className="xl:bg-[#1a1f2e] lg:col-start-2 xl:col-start-3 border-l border-[#2a3441] overflow-y-auto p-5">
+        <aside className="xl:bg-[#1a1f2e] lg:col-start-2 xl:col-start-3 border-l border-[#2a3441]  overflow-y-scroll scrollbar scrollbar-thumb-gray-500 scrollbar-track-gray-800 scrollbar-w-3 scrollbar-track-rounded-full scrollbar-thumb-rounded-full p-5">
           {/* Portfolio Card */}
           <Card className="bg-white/5 border-white/10 mb-5">
             <CardContent className="p-4">
