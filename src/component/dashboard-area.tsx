@@ -293,7 +293,7 @@ const WiseSportsAIDashboard: React.FC = () => {
 
       {/* Header */}
       <header className="bg-white/5 backdrop-blur-[20px] border-b border-white/10 p-3 sticky top-0 z-[1000]">
-        <div className="flex justify-between items-center max-w-screen-2xl mx-auto">
+        <div className="flex justify-between items-center mx-3">
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 text-base font-bold text-white">
               <span className="text-xl text-green-400">⚡</span>
@@ -362,7 +362,7 @@ const WiseSportsAIDashboard: React.FC = () => {
       </header>
 
       {/* Page Layout: Left Sidebar, Main Content, Right Sidebar */}
-      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] xl:grid-cols-[260px_1fr_300px] h-[calc(100vh-60px)] max-w-screen-2xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] xl:grid-cols-[260px_1fr_300px] h-[calc(100vh-60px)]">
         {/* Left Sidebar */}
         <aside className="hidden lg:block bg-[#1a1f2e] border-r border-[#2a3441] overflow-y-auto p-5">
           <div className="space-y-6">
