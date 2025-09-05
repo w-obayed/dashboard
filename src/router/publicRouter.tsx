@@ -3,11 +3,11 @@ import MlbDashboard from "@/page/mlb";
 
 const publicRoters = [
   {
-    path: "/",
+    path: "/defensive-efficiency",
     element: <MlbDashboard />,
   },
   {
-    path: "/defensive-efficiency",
+    path: "/",
     element: <DefensiveEfficiencyDashboard />,
   },
 ];
