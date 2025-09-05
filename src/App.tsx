@@ -1,10 +1,11 @@
-import WiseSportsAIDashboard from "./component/dashboard-area";
 import { ThemeProvider } from "./component/theme-provider";
+import { RouterProvider } from "react-router-dom";
+import router from "./router/router";
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <WiseSportsAIDashboard />
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }
