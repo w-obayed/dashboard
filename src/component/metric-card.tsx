@@ -36,12 +36,12 @@ const MetricCard = ({
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setAnimated(true), 300);
+    const timer = setTimeout(() => setAnimated(true), 200);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <Card>
+    <Card className="hover:translate-y-[-3px] transition-transform duration-200 ease-out">
       <CardContent>
         <div className="text-xl font-semibold font-[--inter-font] dark:text-white mb-4 text-center">
           {title}
@@ -85,9 +85,9 @@ const MetricCard = ({
           </div>
         </div>
 
-        <div className="h-6 bg-slate-800/50 rounded overflow-hidden flex mt-3">
+        <div className="h-5 bg-slate-800/50 rounded-xl overflow-hidden flex mt-3">
           <div
-            className={`h-full bg-gradient-to-r from-teal-700 to-teal-500 flex items-center justify-center text-white text-xs font-semibold transition-all duration-500 ease-out ${
+            className={`h-full bg-gradient-to-r from-teal-700 to-teal-500 flex items-center justify-center text-white text-xs font-semibold font-[--inter-font] transition-[width] duration-1000 ease-in-out ${
               animated ? `w-[${seaWidth}%]` : "w-0"
             }`}
             style={{ width: animated ? `${seaWidth}%` : "0%" }}
@@ -95,7 +95,7 @@ const MetricCard = ({
             {seaWidth > 20 && (seaDisplayValue || seaValue)}
           </div>
           <div
-            className={`h-full bg-gradient-to-r from-blue-800 to-blue-500 flex items-center justify-center text-white text-xs font-semibold transition-all duration-500 ease-out ${
+            className={`h-full bg-gradient-to-r from-blue-800 to-blue-500 flex items-center justify-center text-white text-xs font-semibold font-[--inter-font] transition-[width] duration-1000 ease-in-out ${
               animated ? `w-[${tbWidth}%]` : "w-0"
             }`}
             style={{ width: animated ? `${tbWidth}%` : "0%" }}
