@@ -1,17 +1,21 @@
-import { Trophy, Lightbulb, BarChart3 } from "lucide-react";
+import { Trophy, Lightbulb, BarChart3, ArrowRight } from "lucide-react";
 import MetricCard from "@/component/metric-card";
-// import { ModeToggle } from "@/component/mode-toggle";
+import { ModeToggle } from "@/component/mode-toggle";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 const DefensiveEfficiencyDashboard = () => {
   return (
     <>
+      <div className="flex justify-center mt-2">
+        <ModeToggle />
+      </div>
       <div className="min-h-screen p-6 flex justify-center items-center">
         <div className="max-w-5xl w-full">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="text-base text-primary font-semibold dark:text-white">
+                <div className="text-xl font-[--inter-font] text-primary font-bold dark:text-white">
                   🛡️ Defensive Efficiency
                 </div>
               </div>
@@ -21,7 +25,7 @@ const DefensiveEfficiencyDashboard = () => {
               {/* Info Box */}
               <div className="bg-emerald-400/10 border border-emerald-400/20 rounded-lg p-3 mb-5 text-sm dark:text-slate-300 flex items-start gap-2">
                 <Lightbulb className="text-emerald-400 w-5 h-5 flex-shrink-0" />
-                <span className="text-md leading-relaxed">
+                <span className="text-base text-muted-foreground font-normal font-[--inter-font] leading-relaxed">
                   Strong defense prevents runs and creates opportunities. Better
                   fielding teams make fewer mistakes and turn more double plays,
                   directly impacting game outcomes.
@@ -79,15 +83,17 @@ const DefensiveEfficiencyDashboard = () => {
               </div>
 
               {/* Advantage Section */}
-              <div className="bg-gradient-to-br from-emerald-400/10 to-emerald-400/5 border border-emerald-400/20 rounded-lg p-5 text-center mb-5">
-                <div className="text-sm font-semibold text-emerald-400 mb-3 flex items-center justify-center gap-2">
+              <div className="bg-gradient-to-br from-emerald-400/10 to-emerald-400/5 border border-emerald-400/20 rounded-lg p-5 text-center mb-5 space-y-4 shadow">
+                <div className="flex items-center justify-center text-emerald-400 gap-2">
                   <Trophy className="w-4 h-4" />
-                  <span>Defensive Advantage</span>
+                  <span className="text-xl font-semibold font-[--inter-font] text-emerald-400 mt-1">
+                    Defensive Advantage
+                  </span>
                 </div>
-                <div className="text-2xl font-bold dark:text-white mb-3">
+                <div className="text-2xl font-bold font-[--inter-font] dark:text-white">
                   TAMPA BAY RAYS
                 </div>
-                <div className="text-sm dark:text-slate-300 leading-relaxed">
+                <div className="text-sm text-muted-foreground font-[--inter-font] font-normal leading-relaxed">
                   <strong>
                     TB defense significantly better across all metrics.
                   </strong>
@@ -101,31 +107,35 @@ const DefensiveEfficiencyDashboard = () => {
               </div>
 
               {/* Breakdown Section */}
-              <div className="dark:bg-slate-900/50 border border-slate-700/50 rounded-lg p-4 mb-4">
-                <div className="text-sm font-semibold dark:text-white mb-3 flex items-center gap-2">
-                  <BarChart3 className="w-4 h-4" />
-                  <span>What This Means</span>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {[
-                    "TB turns more batted balls into outs",
-                    "SEA more prone to defensive mistakes",
-                    "TB's +14 DRS is elite level defense",
-                    "Could impact close, low-scoring games",
-                  ].map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-2 text-sm dark:text-slate-300"
-                    >
-                      <span className="text-emerald-400">→</span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Card>
+                <CardContent>
+                  <div className="text-sm font-semibold font-[--inter-font] dark:text-white mb-3 flex items-center gap-2">
+                    <BarChart3 className="w-4 h-4" />
+                    <span>What This Means</span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      "TB turns more batted balls into outs",
+                      "SEA more prone to defensive mistakes",
+                      "TB's +14 DRS is elite level defense",
+                      "Could impact close, low-scoring games",
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-2 text-sm font-[--inter-font] font-normal dark:text-slate-300"
+                      >
+                        <ArrowRight className="w-4 h-4 text-emerald-400" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Separator className="my-4" />
 
               {/* Legend */}
-              <div className="flex flex-wrap gap-2 sm:gap-5 justify-start sm:justify-center pt-4 border-t border-slate-700/50 text-xs dark:text-slate-400">
+              <div className="flex flex-wrap gap-2 sm:gap-5 justify-start sm:justify-center font-normal font-[--inter-font] text-xs dark:text-slate-400">
                 <div>
                   <strong>DRS:</strong> Defensive Runs Saved (above average)
                 </div>
@@ -139,7 +149,6 @@ const DefensiveEfficiencyDashboard = () => {
             </CardContent>
           </Card>
         </div>
-        {/* <ModeToggle /> */}
       </div>
     </>
   );
